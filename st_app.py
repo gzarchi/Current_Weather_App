@@ -180,7 +180,7 @@ if initial_settings != [['Jerusalem', 'Asia/Jerusalem', '\U0001F64A Celsius'], [
         reset_favorites([['Jerusalem', 'Asia/Jerusalem', '\U0001F64A Celsius'], ['New York City', 'America/New_York', '\U0001F649 Fahrenheit']])
 
 
-st.link_button('New Search', 'https://currentweatherapp.streamlit.app')
+st.link_button('Refreshs', 'https://currentweatherapp.streamlit.app')
 
 
 
