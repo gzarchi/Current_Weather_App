@@ -53,6 +53,13 @@ if 'selected_city' not in st.session_state:
 # Display current local datetime
 st.write(get_local_current_datetime())
 
+# Display reset favorites button
+if initial_settings != [['Jerusalem', 'Asia/Jerusalem', '\U0001F64A Celsius'], ['New York City', 'America/New_York', '\U0001F649 Fahrenheit']]:
+    reset_favorites_button = st.button('Reset Favorites')
+    if reset_favorites_button:
+        reset_favorites([['Jerusalem', 'Asia/Jerusalem', '\U0001F64A Celsius'], ['New York City', 'America/New_York', '\U0001F649 Fahrenheit']])
+
+
 # Display selection box for cities list
 selection = st.selectbox('Select a City: ', cities_list)
 
@@ -172,12 +179,6 @@ if changed_default_temp or found_typed_selection_settings:
     elif save_settings_button or st.session_state['save_settings clicked']:
         st.session_state['save_settings clicked'] = True
         save_settings(selection_settings[0], selection_settings[1], selected_temp, initial_settings)
-
-
-if initial_settings != [['Jerusalem', 'Asia/Jerusalem', '\U0001F64A Celsius'], ['New York City', 'America/New_York', '\U0001F649 Fahrenheit']]:
-    reset_favorites_button = st.button('Reset Favorites')
-    if reset_favorites_button:
-        reset_favorites([['Jerusalem', 'Asia/Jerusalem', '\U0001F64A Celsius'], ['New York City', 'America/New_York', '\U0001F649 Fahrenheit']])
 
 
 st.link_button('Refresh', 'https://currentweatherapp.streamlit.app')
