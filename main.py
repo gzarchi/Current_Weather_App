@@ -20,14 +20,14 @@ def get_typed_selection_settings(typed_selection):
         typed_selection_city = typed_selection_cities[0]
 
     else:
-        typed_selection_options = [f"{city['timezone']}/{city['name']}" for city in typed_selection_cities]
+        typed_selection_options = [f"{city['name']} [{city['timezone']}]" for city in typed_selection_cities]
         selected_city = st.radio(f'Select which `{typed_selection}` you are referring to:', typed_selection_options)
 
         if selected_city != st.session_state['selected_city']:
             st.session_state['selected_city'] = selected_city
 
         for city in typed_selection_cities:
-            if (city['timezone'] + '/' + city['name']) == selected_city:
+            if (city['name'] + ' [' + city['timezone'] + ']') == selected_city:
                 typed_selection_city = city
                 break
 
