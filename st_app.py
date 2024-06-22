@@ -6,9 +6,9 @@ import datetime as dt
 import pytz
 import json
 import os
-from main3 import get_typed_selection_cities, get_typed_selection_settings, fetch_data
-from Module_Alpha3 import get_local_current_datetime, get_city_current_datetime
-from Module_A3 import save_settings, load_favorites, set_settings_as_default, reset_favorites
+from main import get_typed_selection_cities, get_typed_selection_settings, fetch_data
+from module_alpha import get_local_current_datetime, get_city_current_datetime
+from module_a import save_settings, load_favorites, set_settings_as_default, reset_favorites
 
 
 # Display Title
