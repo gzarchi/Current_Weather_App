@@ -16,10 +16,13 @@ This is the first python project in BIU DS17
    - Input can be a city name or alternative name (example: 'ir david' will find 'Jerusalem')
    - If there are 2 or more cities with the same name, the user can select which one he was referring to.
      
-2. The user can fetch weather data for his selection / typed input. The app will print a df with the relevant data
+2. The user can fetch weather data for his selection / typed input. 
+   - The app will print a df with the relevant data only if the typed city name is found
+   - If it is not found, the app will print 'Soryy, we have no data for {typed city name}...'
+   - if te typed city input is an empty string, the app will ask the user to 'Enter a City'.
 
-3. The user can save the current settings
+4. The user can save the current settings
    - Save settings button will show up only if there are new settings to save.
 
-4. The user can set the current settings as default
+5. The user can set the current settings as default
    - Set as default button will only show up in the relevant situation
