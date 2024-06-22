@@ -37,8 +37,7 @@ def get_typed_selection_settings(typed_selection):
 
 def fetch_data(name, tz, selected_temp):
     ow_api_key = '0f4470337016fe83612563095537bf7a'
-    temp_units = 'standard' if (selected_temp == 'Kelvin') else (
-        'metric' if (selected_temp == 'Celsius') else 'imperial')
+    temp_units = 'standard' if (selected_temp == '\U0001F648 Kelvin') else ('metric' if (selected_temp == '\U0001F64A Celsius') else 'imperial')
     url_call = f"https://api.openweathermap.org/data/2.5/weather?q={name}&appid={ow_api_key}&units={temp_units}"
     city_owdata = requests.get(url_call)
     city_owdata = city_owdata.json()

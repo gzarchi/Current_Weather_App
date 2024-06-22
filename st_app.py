@@ -13,6 +13,7 @@ from module_a import save_settings, load_favorites, set_settings_as_default, res
 
 # Display Title
 st.markdown('# Current Weather App')
+st.markdown('#### By Gal Zarchi // BIU DS17')
 
 # Set initial settings
 initial_settings = [['Jerusalem', 'Asia/Jerusalem', '\U0001F64A Celsius'],
@@ -150,6 +151,15 @@ if selected and not selected_default and not changed_default_temp:
     if set_as_default_button:
         set_settings_as_default(selection_settings[0], selection_settings[1], selected_temp)
 
+# Display 'Set as Default' button
+if not selected_default and st.session_state['save_settings clicked'] is True:
+    set_as_default_button = st.button('Set as Default')
+
+    # Process set_as_default_button
+    if set_as_default_button:
+        set_settings_as_default(selection_settings[0], selection_settings[1], selected_temp)
+        st.session_state['save_settings clicked'] = False
+
 # Display 'Save to Favorites' button
 if changed_default_temp or found_typed_selection_settings:
     save_settings_button = st.button('Save Settings')
@@ -163,14 +173,12 @@ if changed_default_temp or found_typed_selection_settings:
         st.session_state['save_settings clicked'] = True
         save_settings(selection_settings[0], selection_settings[1], selected_temp, initial_settings)
 
-# Display 'Set as Default' button
-if not selected_default and st.session_state['save_settings clicked'] is True:
-    set_as_default_button = st.button('Set as Default')
 
-    # Process set_as_default_button
-    if set_as_default_button:
-        set_settings_as_default(selection_settings[0], selection_settings[1], selected_temp)
-        st.session_state['save_settings clicked'] = False
+if initial_settings != [['Jerusalem', 'Asia/Jerusalem', '\U0001F64A Celsius'], ['New York City', 'America/New_York', '\U0001F649 Fahrenheit']]:
+    reset_favorites_button = st.button('Reset Favorites')
+    if reset_favorites_button:
+        reset_favorites([['Jerusalem', 'Asia/Jerusalem', '\U0001F64A Celsius'], ['New York City', 'America/New_York', '\U0001F649 Fahrenheit']])
+
 
 
 
