@@ -1,6 +1,8 @@
 # Current Weather App
 # By Gal Zarchi
 
+StreamLit App URL: https://currentweatherapp.streamlit.app
+
 This is the first python project in BIU DS17
 
 0. General:
