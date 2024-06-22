@@ -1,6 +1,3 @@
-# Current_Weather_App
-# By Gal Zarchi // BIU DS17
-
 This is the first python project in BIU DS17
 
 0. General:
